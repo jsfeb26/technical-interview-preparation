@@ -1,0 +1,25 @@
+{
+  "name": "technical-interview-preparation",
+  "version": "1.0.0",
+  "description": "Technical Interview Preparation Materials",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --compilers js:babel-core/register",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsfeb26/technical-interview-preparation.git"
+  },
+  "author": "Jason Stinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsfeb26/technical-interview-preparation/issues"
+  },
+  "homepage": "https://github.com/jsfeb26/technical-interview-preparation#readme",
+  "dependencies": {
+    "babel-core": "^5.8.23",
+    "chai": "^3.4.1",
+    "mocha": "^2.3.4"
+  }
+}

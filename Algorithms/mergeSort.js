@@ -1,4 +1,4 @@
-function mergeSort(A, start, end) {
+export default function mergeSort(A, start, end) {
   if (start < end) {
     // get middle value and then add it to start to get middle point of current array
     let middle = Math.floor((end - start) / 2) + start;
@@ -47,7 +47,3 @@ function merge(A, start, middle, end) {
 
   return A;
 }
-
-let testArray = [7, 3, 9, 14, 8, 2, 1];
-mergeSort(testArray, 0, testArray.length - 1);
-console.log(testArray);

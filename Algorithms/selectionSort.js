@@ -1,4 +1,4 @@
-function selectionSort(array) {
+export default function selectionSort(array) {
   for (let i = 0; i < array.length - 1; i += 1) {
     let minIndex = i;
 
@@ -19,5 +19,3 @@ function swap(array, oldValue, newValue) {
   array[oldValue] = array[newValue];
   array[newValue] = temp;
 }
-
-console.log(selectionSort([3, 7, 2, 9, 4])); // [2, 3, 4, 7, 9]

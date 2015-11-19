@@ -1,4 +1,4 @@
-function bubbleSort(array) {
+export default function bubbleSort(array) {
   let sortedIndex = array.length - 1;
 
   while (sortedIndex > 0) {
@@ -19,5 +19,3 @@ function swap(array, first, second) {
   array[first] = array[second];
   array[second] = temp;
 }
-
-console.log(bubbleSort([3, 7, 2, 9, 4])); // [2, 3, 4, 7, 9]

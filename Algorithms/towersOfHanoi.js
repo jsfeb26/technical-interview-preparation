@@ -1,4 +1,4 @@
-function move(numberOfDiscs, from, to, inter) {
+export default function move(numberOfDiscs, from, to, inter) {
   if (numberOfDiscs === 1) {
     console.log(`Move disc 1 from ${from} to ${to}`);
   }
@@ -8,5 +8,3 @@ function move(numberOfDiscs, from, to, inter) {
     move(numberOfDiscs - 1, inter, to, from);
   }
 }
-
-move(5, 'A', 'B', 'C');

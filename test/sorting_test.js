@@ -37,5 +37,5 @@ describe('Array Sorting Algoritmhs', () => {
     const sortedArray = selectionSort(array);
 
     expect(sortedArray).to.deep.equal([1, 2, 3, 4, 7, 9, 14, 34, 97]);
-  })
+  });
 });

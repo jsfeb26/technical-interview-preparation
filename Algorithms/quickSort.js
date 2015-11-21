@@ -14,7 +14,7 @@ function parition(arr, start, end) {
   let i = start;
 
   for (let j = start; j < end; j += 1) {
-    if (arr[j] < arr[end]) {
+    if (arr[j] <= arr[end]) {
       swap(arr, i, j);
       i += 1;
     }

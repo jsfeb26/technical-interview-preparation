@@ -3,6 +3,7 @@ import insertionSort from '../Algorithms/insertionSort';
 import mergeSort from '../Algorithms/mergeSort';
 import bubbleSort from '../Algorithms/bubbleSort';
 import selectionSort from '../Algorithms/selectionSort';
+import quickSort from '../Algorithms/quickSort';
 
 describe('Array Sorting Algoritmhs', () => {
   it('Insertion Sort correctly sorts array', () => {
@@ -37,5 +38,13 @@ describe('Array Sorting Algoritmhs', () => {
     const sortedArray = selectionSort(array);
 
     expect(sortedArray).to.deep.equal([1, 2, 3, 4, 7, 9, 14, 34, 97]);
+  });
+
+  it('Quick Sort correctly sorts array', () => {
+    let array = [3, 7, 2, 9, 4, 1, 14, 97, 34];
+
+    quickSort(array);
+
+    expect(array).to.deep.equal([1, 2, 3, 4, 7, 9, 14, 34, 97]);
   });
 });

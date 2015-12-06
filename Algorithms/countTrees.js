@@ -1,6 +1,6 @@
 // given a number of nodes return the total number possible combinations
 // of binary trees
-function countTrees(iNodeCount) {
+export default function countTrees(iNodeCount) {
   if (iNodeCount <= 1) {
     // the end of a tree add 1 to the count
     return 1;

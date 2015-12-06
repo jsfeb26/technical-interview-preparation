@@ -4,6 +4,9 @@
 //
 // Input: 1?0?
 // Output: 1000 1001 1100 1101
+//
+// T(wc) = O(2^wc)
+// S(wc) = 0(wc)
 function calculateWildcard(strArray, result) {
   var wildCardIndex = strArray.indexOf('?');
 

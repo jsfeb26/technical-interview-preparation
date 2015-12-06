@@ -1,6 +1,6 @@
+//T(n) = O(2^n)
+// S(n) = O(n)
 function towersOfHanoi(n) {
-  //T(n) = O(2^n)
-  // S(n) = O(n)
   var towers = {
     'A': n,
     'B': 0,

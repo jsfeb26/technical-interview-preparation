@@ -1,7 +1,7 @@
 import {expect} from 'chai';
 import Tree from '../Data-Structures/tree';
 import {inOrder, preOrder, postOrder} from '../Algorithms/treeTraversal';
-import isBST from '../Algorithms/isBST';
+import isBST from '../Algorithms/iK/Homework/Trees/isBST';
 
 describe('Binary Tree Tests', () => {
   it('In-Order Tree Traversal', () => {

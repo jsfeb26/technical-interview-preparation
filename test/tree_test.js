@@ -3,6 +3,7 @@ import Tree from '../Data-Structures/tree';
 import {inOrder, preOrder, postOrder} from '../Algorithms/treeTraversal';
 import isBST from '../Algorithms/iK/Homework/Trees/isBST';
 import {postOrderIterative, postOrderRecursive} from '../Algorithms/iK/Homework/Trees/postOrder';
+import treePaths from '../Algorithms/iK/Homework/Trees/treePaths';
 
 describe('Binary Tree Tests', () => {
   it('In-Order Tree Traversal', () => {
@@ -120,7 +121,6 @@ describe('iK Tree Homework Tests', () => {
   });
 
   it('Post Order Traversal', () => {
-
     const tree = {
       'val': 10,
       'left': {
@@ -159,5 +159,43 @@ describe('iK Tree Homework Tests', () => {
     postOrderIterative(tree);
     console.log('Recursive: ');
     postOrderRecursive(tree);
+  });
+
+  it('Tree to leaf paths', () => {
+    const tree = {
+      'val': 10,
+      'left': {
+        'val': 5,
+        'left': {
+          'val': 4,
+          'left': null,
+          'right': null
+        },
+        'right': {
+          'val': 8,
+          'left': null,
+          'right': null
+        }
+      },
+      'right': {
+        'val': 15,
+        'left': {
+          'val': 9,
+          'left': null,
+          'right': null
+        },
+        'right': {
+          'val': 16,
+          'left': null,
+          'right': {
+            'val': 17,
+            'left': null,
+            'right': null
+          }
+        }
+      }
+    }
+
+    treePaths(tree);
   });
 });

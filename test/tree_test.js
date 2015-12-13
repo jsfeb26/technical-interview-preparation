@@ -4,6 +4,7 @@ import {inOrder, preOrder, postOrder} from '../Algorithms/treeTraversal';
 import isBST from '../Algorithms/iK/Homework/Trees/isBST';
 import {postOrderIterative, postOrderRecursive} from '../Algorithms/iK/Homework/Trees/postOrder';
 import treePaths from '../Algorithms/iK/Homework/Trees/treePaths';
+import rebuildTree from '../Algorithms/iK/Homework/Trees/rebuildTree';
 
 describe('Binary Tree Tests', () => {
   it('In-Order Tree Traversal', () => {
@@ -197,5 +198,12 @@ describe('iK Tree Homework Tests', () => {
     }
 
     treePaths(tree);
+  });
+
+  it('Tree to leaf paths', () => {
+    const inOrder = [4, 5, 8, 10, 9, 15, 16, 17];
+    const preOrder = [10, 5, 4, 8, 15, 9, 16, 17];
+
+    rebuildTree(inOrder, preOrder);
   });
 });

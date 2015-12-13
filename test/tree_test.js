@@ -6,6 +6,7 @@ import {postOrderIterative, postOrderRecursive} from '../Algorithms/iK/Homework/
 import treePaths from '../Algorithms/iK/Homework/Trees/treePaths';
 import rebuildTree from '../Algorithms/iK/Homework/Trees/rebuildTree';
 import LCA from '../Algorithms/iK/Homework/Trees/LCA';
+import {Iterator, Node} from '../Algorithms/iK/Homework/Trees/treeIterator';
 
 describe('Binary Tree Tests', () => {
   it('In-Order Tree Traversal', () => {
@@ -271,5 +272,27 @@ describe('iK Tree Homework Tests', () => {
     expect(result1).to.be.equal(15);
     expect(result2).to.be.equal(65);
     expect(result3).to.be.equal(45);
+  });
+
+  it('In-Order Tree Iterator', () => {
+    var tree = new Node(10);
+    tree.addLeft(new Node(5));
+    tree.addRight(new Node(15));
+    tree.left.addLeft(new Node(4));
+    tree.left.addRight(new Node(8));
+    tree.right.addLeft(new Node(9));
+    tree.right.addRight(new Node(16));
+    tree.right.right.addRight(new Node(17));
+
+    var iterator = new Iterator(tree);
+
+    expect(iterator.next().val).to.be.equal(4);
+    expect(iterator.next().val).to.be.equal(5);
+    expect(iterator.next().val).to.be.equal(8);
+    expect(iterator.next().val).to.be.equal(10);
+    expect(iterator.next().val).to.be.equal(9);
+    expect(iterator.next().val).to.be.equal(15);
+    expect(iterator.next().val).to.be.equal(16);
+    expect(iterator.next().val).to.be.equal(17);
   });
 });

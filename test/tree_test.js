@@ -5,6 +5,7 @@ import isBST from '../Algorithms/iK/Homework/Trees/isBST';
 import {postOrderIterative, postOrderRecursive} from '../Algorithms/iK/Homework/Trees/postOrder';
 import treePaths from '../Algorithms/iK/Homework/Trees/treePaths';
 import rebuildTree from '../Algorithms/iK/Homework/Trees/rebuildTree';
+import LCA from '../Algorithms/iK/Homework/Trees/LCA';
 
 describe('Binary Tree Tests', () => {
   it('In-Order Tree Traversal', () => {
@@ -205,5 +206,70 @@ describe('iK Tree Homework Tests', () => {
     const preOrder = [10, 5, 4, 8, 15, 9, 16, 17];
 
     rebuildTree(inOrder, preOrder);
+  });
+
+  it('Least Common Ancestor', () => {
+    var tree = {
+      'val': 45,
+      'left': {
+        'val': 25,
+        'left': {
+          'val': 15,
+          'left': {
+            'val': 10,
+            'left': null,
+            'right': null
+          },
+          'right': {
+            'val': 20,
+            'left': null,
+            'right': null
+          }
+        },
+        'right': {
+          'val': 30,
+          'left': null,
+          'right': null
+        }
+      },
+      'right': {
+        'val': 65,
+        'left': {
+          'val': 55,
+          'left': {
+            'val': 50,
+            'left': null,
+            'right': null
+          },
+          'right': {
+            'val': 60,
+            'left': null,
+            'right': null
+          }
+        },
+        'right': {
+          'val': 75,
+          'left': null,
+          'right': {
+            'val': 80,
+            'left': null,
+            'right': {
+              'val': 85,
+              'left': null,
+              'right': null
+            }
+          }
+        }
+      }
+    }
+
+    let result1 = LCA(tree, 10, 20);
+    let result2 = LCA(tree, 50, 80);
+    let result3 = LCA(tree, 20, 60);
+    let result4 = LCA(tree, 60, 85);
+
+    expect(result1).to.be.equal(15);
+    expect(result2).to.be.equal(65);
+    expect(result3).to.be.equal(45);
   });
 });

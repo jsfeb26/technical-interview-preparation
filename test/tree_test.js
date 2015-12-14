@@ -7,6 +7,7 @@ import treePaths from '../Algorithms/iK/Homework/Trees/treePaths';
 import rebuildTree from '../Algorithms/iK/Homework/Trees/rebuildTree';
 import LCA from '../Algorithms/iK/Homework/Trees/LCA';
 import {Iterator, Node} from '../Algorithms/iK/Homework/Trees/treeIterator';
+import convertToDLL from '../Algorithms/iK/Homework/Trees/convertDLL';
 
 describe('Binary Tree Tests', () => {
   it('In-Order Tree Traversal', () => {
@@ -294,5 +295,75 @@ describe('iK Tree Homework Tests', () => {
     expect(iterator.next().val).to.be.equal(15);
     expect(iterator.next().val).to.be.equal(16);
     expect(iterator.next().val).to.be.equal(17);
+  });
+
+  it('Convert Binary Tree to Circular Doubly Linked List', () => {
+    const tree = {
+      'val': 10,
+      'left': {
+        'val': 5,
+        'left': {
+          'val': 4,
+          'left': null,
+          'right': null
+        },
+        'right': {
+          'val': 8,
+          'left': null,
+          'right': null
+        }
+      },
+      'right': {
+        'val': 15,
+        'left': {
+          'val': 12,
+          'left': null,
+          'right': null
+        },
+        'right': {
+          'val': 16,
+          'left': null,
+          'right': {
+            'val': 17,
+            'left': null,
+            'right': null
+          }
+        }
+      }
+    }
+
+    let dLL = convertToDLL(tree);
+    var test1 = [];
+    var test2 = [];
+
+    while (!dLL.visited) {
+      dLL.visited = true;
+      test1.push(dLL.val);
+      dLL = dLL.right;
+    }
+
+    while (dLL.visited) {
+      dLL.visited = false;
+      test2.push(dLL.val);
+      dLL = dLL.left;
+    }
+
+    expect(test1[0]).to.be.equal(4);
+    expect(test1[1]).to.be.equal(5);
+    expect(test1[2]).to.be.equal(8);
+    expect(test1[3]).to.be.equal(10);
+    expect(test1[4]).to.be.equal(12);
+    expect(test1[5]).to.be.equal(15);
+    expect(test1[6]).to.be.equal(16);
+    expect(test1[7]).to.be.equal(17);
+
+    expect(test2[0]).to.be.equal(4);
+    expect(test2[1]).to.be.equal(17);
+    expect(test2[2]).to.be.equal(16);
+    expect(test2[3]).to.be.equal(15);
+    expect(test2[4]).to.be.equal(12);
+    expect(test2[5]).to.be.equal(10);
+    expect(test2[6]).to.be.equal(8);
+    expect(test2[7]).to.be.equal(5);
   });
 });

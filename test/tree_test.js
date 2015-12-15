@@ -8,6 +8,7 @@ import rebuildTree from '../Algorithms/iK/Homework/Trees/rebuildTree';
 import LCA from '../Algorithms/iK/Homework/Trees/LCA';
 import {Iterator, Node} from '../Algorithms/iK/Homework/Trees/treeIterator';
 import convertToDLL from '../Algorithms/iK/Homework/Trees/convertDLL';
+import cloneTree from '../Algorithms/iK/Homework/Trees/cloneTree';
 
 describe('Binary Tree Tests', () => {
   it('In-Order Tree Traversal', () => {
@@ -365,5 +366,32 @@ describe('iK Tree Homework Tests', () => {
     expect(test2[5]).to.be.equal(10);
     expect(test2[6]).to.be.equal(8);
     expect(test2[7]).to.be.equal(5);
+  });
+
+  it('Clone Binary Tree', () => {
+    var tree = new Node(10);
+    tree.left = new Node(5);
+    tree.left.left = new Node(4);
+    tree.left.right = new Node(8);
+    tree.right = new Node(15);
+    tree.right.left = new Node(12);
+    tree.right.right = new Node(16);
+    tree.right.right.right = new Node(17);
+
+    var newTree = cloneTree(tree);
+
+    expect(newTree).to.not.be.equal(tree);
+    expect(newTree.val).to.be.equal(10);
+    expect(newTree.left.val).to.be.equal(5);
+    expect(newTree.left.left.val).to.be.equal(4);
+    expect(newTree.left.right.val).to.be.equal(8);
+    expect(newTree.right.val).to.be.equal(15);
+    expect(newTree.right.left.val).to.be.equal(12);
+    expect(newTree.right.right.val).to.be.equal(16);
+    expect(newTree.right.right.right.val).to.be.equal(17);
+  });
+
+  it('Flip Tree', () => {
+
   });
 });

@@ -1,5 +1,6 @@
 import {expect} from 'chai';
 import calculateMin from '../Algorithms/iK/Homework/Graphs/snakesAndLadders';
+import shortestPath from '../Algorithms/iK/Homework/Graphs/chessKnight';
 
 describe('iK Graph Tests', () => {
   it('Snakes and Ladders', () => {
@@ -13,5 +14,11 @@ describe('iK Graph Tests', () => {
     let minRolls = calculateMin(board);
 
     expect(minRolls).to.be.equal(4);
+  });
+
+  it('Shortest Path for Knight on Chessboard', () => {
+    var path = shortestPath([0,0,], [7,7]);
+
+    expect(path).to.deep.equal([ [ 0, 0 ], [ 2, 1 ], [ 0, 2 ], [ 2, 3 ], [ 4, 4 ], [ 6, 5 ], [ 7, 7 ] ]);
   });
 });

@@ -2,6 +2,7 @@ import {expect} from 'chai';
 import calculateMin from '../Algorithms/iK/Homework/Graphs/snakesAndLadders';
 import shortestPath from '../Algorithms/iK/Homework/Graphs/chessKnight';
 import detectCycle from '../Algorithms/iK/Homework/Graphs/graphCycles';
+import sort from '../Algorithms/iK/Homework/Graphs/topologicalSort';
 
 describe('iK Graph Tests', () => {
   it('Snakes and Ladders', () => {
@@ -64,5 +65,19 @@ describe('iK Graph Tests', () => {
     expect(test2).to.be.equal(false);
     expect(test3).to.be.equal(true);
     expect(test4).to.be.equal(true);
+  });
+
+  it('Alien Topological Sort', () => {
+    const test1 = ['baa', 'abcd', 'abca', 'cab', 'cad'];
+    const test2 = ['caa', 'aaa', 'aab'];
+    const test3 = ['abc'];
+
+    var result1 = sort(test1);
+    var result2 = sort(test2);
+    var result3 = sort(test3);
+
+    expect(result1).to.be.equal('bdac');
+    expect(result2).to.be.equal('cab');
+    expect(result3).to.be.equal('abc');
   });
 });

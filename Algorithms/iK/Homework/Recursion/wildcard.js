@@ -7,6 +7,10 @@
 //
 // T(wc) = O(2^wc)
 // S(wc) = 0(wc)
+
+// Please write a program that takes given strings as input and produces the suggested output.
+
+// Suggested time: 20 minutes.
 function calculateWildcard(strArray, result) {
   var wildCardIndex = strArray.indexOf('?');
 
